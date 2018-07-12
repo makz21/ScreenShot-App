@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="350.0" prefWidth="400.0">
+         <children>
+            <Button fx:id="takeSS" layoutX="115.0" layoutY="37.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="171.0" text="Take SS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="takeAndUploadSS" layoutX="115.0" layoutY="89.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="171.0" text="Take &amp; upload SS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="openFolderWithSS" layoutX="114.0" layoutY="201.0" mnemonicParsing="false" text="Open containing folder">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="editSS" layoutX="115.0" layoutY="145.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="171.0" text="Edit SS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="CoppySS" layoutX="14.0" layoutY="253.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="Copy SS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="CopySsUrl" layoutX="301.0" layoutY="253.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="Copy URL">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</GridPane>
