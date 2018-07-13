@@ -37,12 +37,12 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="CoppySS" layoutX="14.0" layoutY="253.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="Copy SS">
+            <Button fx:id="copySS" layoutX="14.0" layoutY="253.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="Copy SS">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="CopySsUrl" layoutX="301.0" layoutY="253.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="Copy URL">
+            <Button fx:id="copySSUrl" layoutX="301.0" layoutY="253.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="Copy URL">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
