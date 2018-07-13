@@ -27,7 +27,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="openFolderWithSS" layoutX="114.0" layoutY="201.0" mnemonicParsing="false" text="Open containing folder">
+            <Button fx:id="openFolderWithSS" layoutX="114.0" layoutY="201.0" mnemonicParsing="false" onAction="#openContainingFolder" text="Open containing folder">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
