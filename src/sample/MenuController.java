@@ -11,13 +11,18 @@ public class MenuController {
     public Button openFolderWithSS;
     // public Button takeAndUploadSS;
     // public Button editSS;
-    // public Button coppySS;
+    // public Button copySS;
     // public Button copySSUrl
 
     @FXML
-    public void openContainingFolder() throws IOException {
-        Runtime.getRuntime().exec("explorer C:\\Users\\makz\\Desktop\\ScreenShot-App\\Screenshots");
-        System.out.println("folder");
+    public void openContainingFolder(){
+        try{
+            Runtime.getRuntime().exec("explorer C:\\Users\\makz\\Desktop\\ScreenShot-App\\Screenshots");  //only windows
+            System.out.println("folder");
+        }catch (java.io.IOException e ){
+            System.out.println("problem z folderem");
+        }
+
     }
 
 }

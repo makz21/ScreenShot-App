@@ -17,22 +17,22 @@
    <children>
       <Pane prefHeight="350.0" prefWidth="400.0">
          <children>
-            <Button fx:id="takeSS" layoutX="115.0" layoutY="37.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="171.0" text="Take SS">
+            <Button fx:id="takeFullSS" layoutX="14.0" layoutY="37.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="171.0" text="Take full SS">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="takeAndUploadSS" layoutX="115.0" layoutY="89.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="171.0" text="Take &amp; upload SS">
+            <Button fx:id="takeAndUploadFullSS" layoutX="14.0" layoutY="89.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="171.0" text="Take &amp; upload full SS">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="openFolderWithSS" layoutX="114.0" layoutY="201.0" mnemonicParsing="false" onAction="#openContainingFolder" text="Open containing folder">
+            <Button fx:id="openFolderWithSS" layoutX="15.0" layoutY="145.0" mnemonicParsing="false" onAction="#openContainingFolder" prefHeight="30.0" prefWidth="371.0" text="Open containing folder">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="editSS" layoutX="115.0" layoutY="145.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="171.0" text="Edit SS">
+            <Button fx:id="editSS" layoutX="158.0" layoutY="197.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="Edit SS">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -43,6 +43,16 @@
                </font>
             </Button>
             <Button fx:id="copySSUrl" layoutX="301.0" layoutY="253.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="Copy URL">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="takePartSS" layoutX="216.0" layoutY="37.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="171.0" text="Take part SS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="takeAndUploadPartSS" layoutX="216.0" layoutY="89.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="171.0" text="Take &amp; upload part SS">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
