@@ -1,7 +1,13 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+import java.awt.event.ActionEvent;
 
 
 public class MenuController{
@@ -14,9 +20,12 @@ public class MenuController{
     CaptureScreenShot captureSS = new CaptureScreenShot();
 
 
+
+
     @FXML
     public void takeAndSaveFullScreenShotOnDisc() {
-        captureSS.takeAndSaveFullScreenShotOnDisc();
+        captureSS.takeAndSaveFullSS();
+
     }
 
     @FXML
@@ -25,7 +34,7 @@ public class MenuController{
             Runtime.getRuntime().exec("explorer C:\\Users\\makz\\Desktop\\ScreenShot-App\\Screenshots");  //only windows
             System.out.println("folder");
         } catch (java.io.IOException e) {
-            System.out.println("problem z folderem");
+            System.out.println("error/folder");
         }
 
     }

@@ -19,7 +19,7 @@ public class CaptureScreenShot {
     private String format = "png";
 
 
-    public void takeAndSaveFullScreenShotOnDisc() {
+    public void takeAndSaveFullSS() {
         try {
             Robot robot = new Robot();
             Date date = new Date();

@@ -14,7 +14,6 @@ public class Main extends Application {
         primaryStage.setTitle("ScreenShot APP");
         primaryStage.setScene(new Scene(root, 400, 350));
         primaryStage.show();
-        //primaryStage.setOpacity();
     }
 
 
