@@ -17,7 +17,7 @@
    <children>
       <Pane prefHeight="350.0" prefWidth="400.0">
          <children>
-            <Button fx:id="takeFullSS" layoutX="14.0" layoutY="37.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="171.0" text="Take full SS">
+            <Button fx:id="takeFullSS" layoutX="14.0" layoutY="37.0" mnemonicParsing="false" onAction="#takeAndSaveFullScreenShotOnDisc" prefHeight="30.0" prefWidth="171.0" text="Take full SS">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
