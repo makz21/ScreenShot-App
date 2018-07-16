@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 
 
 public class MenuController{
-    // public Button takeFullSS;
+    public Button takeFullSS;
     public Button openFolderWithSS;
     // public Button takeAndUploadSS;
     // public Button editSS;
@@ -25,7 +25,6 @@ public class MenuController{
     @FXML
     public void takeAndSaveFullScreenShotOnDisc() {
         captureSS.takeAndSaveFullSS();
-
     }
 
     @FXML
