@@ -2,14 +2,17 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 
 public class MenuController {
     public static final Clipboard CLIPBOARD =
             Toolkit.getDefaultToolkit().getSystemClipboard();
+    private BufferedImage screenShot;
     public Button takeFullSS;
     public Button openFolderWithSS;
     // public Button takeAndUploadSS;
@@ -22,8 +25,12 @@ public class MenuController {
     @FXML
     public void takeAndSaveFullScreenShotOnDisc() throws IOException {
         takeFullSS.getScene().getWindow().setOpacity(0);
-        captureSS.takeAndSaveFullSS();
+        screenShot = captureSS.takeAndSaveFullSS();
         takeFullSS.getScene().getWindow().setOpacity(1);
+    }
+
+    public void copySsToClipboard() {
+        captureSS.copyToClipboard(screenShot);
     }
 
     @FXML

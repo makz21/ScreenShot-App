@@ -28,22 +28,25 @@ public class CaptureScreenShot {
     private String format = "png";
 
 
-    public void takeAndSaveFullSS() {
+    public BufferedImage takeAndSaveFullSS() {
+        BufferedImage screenFullImage = null;
         try {
             Robot robot = new Robot();
             Date date = new Date();
             String fileName = sdf.format(date) + "." + format;
-
             Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
-            BufferedImage screenFullImage = robot.createScreenCapture(screenRect);
+            screenFullImage = robot.createScreenCapture(screenRect);
             ImageIO.write(screenFullImage, format, new File(destination + fileName));
-            MenuController.CLIPBOARD.setContents(new ClipboardImage(screenFullImage), null);
-            System.out.println("screenshot clipboard");
-
             System.out.println("A full screenshot saved!");
         } catch (AWTException | IOException ex) {
             System.err.println(ex);
         }
+        return screenFullImage;
+    }
+
+    public void copyToClipboard(BufferedImage screenFullImage) {
+        MenuController.CLIPBOARD.setContents(new ClipboardImage(screenFullImage), null);
+        System.out.println("copy to clipboard");
     }
 
     public void takeAndSavePartScreenShotOnDisc() {

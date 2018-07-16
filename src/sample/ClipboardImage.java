@@ -5,7 +5,6 @@ import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.Image;
 
-
 public class ClipboardImage implements Transferable {
     private Image image;
 
