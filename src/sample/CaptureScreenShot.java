@@ -53,7 +53,7 @@ public class CaptureScreenShot {
             File image = new File(destination + fileName);
             ImageIO.write(screenFullImage, format, image);
             link = getLink(Uploader.upload(image));
-            System.out.println("A full screenshot saved!" + getLink(Uploader.upload(image)));
+            System.out.println("A full uploaded saved!" + getLink(Uploader.upload(image)));
             image.deleteOnExit();
         } catch (AWTException | IOException ex) {
             System.err.println(ex);
