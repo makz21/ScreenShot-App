@@ -22,6 +22,8 @@ import java.util.Date;
 
 import javax.imageio.ImageIO;
 
+import static sample.Uploader.upload;
+
 public class CaptureScreenShot {
     private DateFormat sdf = new SimpleDateFormat("yyyyMMdd-HHmmss");
     private String destination = "C:\\Users\\makz\\Desktop\\ScreenShot-App\\Screenshots\\";
@@ -42,6 +44,24 @@ public class CaptureScreenShot {
             System.err.println(ex);
         }
         return screenFullImage;
+    }
+
+    public void takeScreenShot(){
+        BufferedImage screenFullImage = null;
+        try {
+            Robot robot = new Robot();
+            Date date = new Date();
+            String fileName = sdf.format(date) + "." + format;
+            Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+            screenFullImage = robot.createScreenCapture(screenRect);
+            File image = new File(destination + fileName);
+            ImageIO.write(screenFullImage, format, image);
+            System.out.println("A full screenshot saved!");
+            upload(image);
+        } catch (AWTException | IOException ex) {
+            System.err.println(ex);
+        }
+
     }
 
     public void copyToClipboard(BufferedImage screenFullImage) {

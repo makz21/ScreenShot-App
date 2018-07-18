@@ -22,7 +22,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="takeAndUploadFullSS" layoutX="14.0" layoutY="89.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="171.0" text="Take &amp; upload full SS">
+            <Button fx:id="takeAndUploadFullSS" layoutX="14.0" layoutY="89.0" mnemonicParsing="false" onAction="#takeAndUploadFullSS" prefHeight="30.0" prefWidth="171.0" text="Take &amp; upload full SS">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

@@ -8,6 +8,8 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
+import static sample.Uploader.upload;
+
 
 public class MenuController {
     public static final Clipboard CLIPBOARD =
@@ -27,6 +29,12 @@ public class MenuController {
         takeFullSS.getScene().getWindow().setOpacity(0);
         screenShot = captureSS.takeAndSaveFullSS();
         takeFullSS.getScene().getWindow().setOpacity(1);
+    }
+
+    @FXML
+
+    public void takeAndUploadFullSS(){
+        captureSS.takeScreenShot();
     }
 
     public void copySsToClipboard() {
