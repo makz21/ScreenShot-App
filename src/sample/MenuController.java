@@ -33,10 +33,15 @@ public class MenuController {
     @FXML
 
     public void takeAndUploadFullSS(){
-        takeAndUploadFullSS.getScene().getWindow().setOpacity(0);
-        link = captureSS.takeAndUploadFullSsToImgur();
-        takeAndUploadFullSS.getScene().getWindow().setOpacity(1);
-        captureSS.copyUrlToClipboard(link);
+        try {
+            takeAndUploadFullSS.getScene().getWindow().setOpacity(0);
+            link = captureSS.takeAndUploadFullSsToImgur();
+            captureSS.copyUrlToClipboard(link);
+        }catch (WebException ex){
+            System.out.println(ex);
+        }finally {
+            takeAndUploadFullSS.getScene().getWindow().setOpacity(1);
+        }
 
     }
 
