@@ -8,16 +8,15 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-import static sample.Uploader.upload;
-
 
 public class MenuController {
     public static final Clipboard CLIPBOARD =
             Toolkit.getDefaultToolkit().getSystemClipboard();
     private BufferedImage screenShot;
+    private String link;
     public Button takeFullSS;
     public Button openFolderWithSS;
-    // public Button takeAndUploadSS;
+    public Button takeAndUploadFullSS;
     // public Button editSS;
     // public Button copySS;
     // public Button copySSUrl
@@ -34,12 +33,21 @@ public class MenuController {
     @FXML
 
     public void takeAndUploadFullSS(){
-        captureSS.takeScreenShot();
+        takeAndUploadFullSS.getScene().getWindow().setOpacity(0);
+        link = captureSS.takeAndUploadFullSsToImgur();
+        takeAndUploadFullSS.getScene().getWindow().setOpacity(1);
+        captureSS.copyUrlToClipboard(link);
+
     }
 
     public void copySsToClipboard() {
-        captureSS.copyToClipboard(screenShot);
+        captureSS.copySsToClipboard(screenShot);
     }
+
+    public void copyUrlToClipboard(){
+        captureSS.copyUrlToClipboard(link);
+    }
+
 
     @FXML
     public void openContainingFolder() {

@@ -1,28 +1,24 @@
 package sample;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 import java.awt.AWTException;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 
+import java.awt.datatransfer.StringSelection;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.imageio.ImageIO;
 
-import static sample.Uploader.upload;
+
 
 public class CaptureScreenShot {
     private DateFormat sdf = new SimpleDateFormat("yyyyMMdd-HHmmss");
@@ -46,36 +42,41 @@ public class CaptureScreenShot {
         return screenFullImage;
     }
 
-    public void takeScreenShot(){
-        BufferedImage screenFullImage = null;
+    public String takeAndUploadFullSsToImgur(){
+        String link = null;
         try {
             Robot robot = new Robot();
             Date date = new Date();
             String fileName = sdf.format(date) + "." + format;
             Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
-            screenFullImage = robot.createScreenCapture(screenRect);
+            BufferedImage screenFullImage = robot.createScreenCapture(screenRect);
             File image = new File(destination + fileName);
             ImageIO.write(screenFullImage, format, image);
-            System.out.println("A full screenshot saved!");
-            upload(image);
+            link = getLink(Uploader.upload(image));
+            System.out.println("A full screenshot saved!" + getLink(Uploader.upload(image)));
+            image.deleteOnExit();
         } catch (AWTException | IOException ex) {
             System.err.println(ex);
         }
-
+        return link;
     }
 
-    public void copyToClipboard(BufferedImage screenFullImage) {
+    public void copySsToClipboard(BufferedImage screenFullImage) {
         MenuController.CLIPBOARD.setContents(new ClipboardImage(screenFullImage), null);
-        System.out.println("copy to clipboard");
+        System.out.println("screen copy to clipboard");
+    }
+    public void copyUrlToClipboard(String link) {
+        StringSelection linkCpy = new StringSelection(link);
+        MenuController.CLIPBOARD.setContents(linkCpy, null);
+        System.out.println("url copy to clipboard");
     }
 
-    public void takeAndSavePartScreenShotOnDisc() {
-    }
 
-    public void takeAndSaveFullScreenShotToBinary() {
+    private String getLink(String jsonResponse)
+    {
+        Pattern pattern = Pattern.compile("link\":\"(.*?)\"");
+        Matcher matcher = pattern.matcher(jsonResponse);
+        matcher.find();
+        return matcher.group().replace("link\":\"", "").replace("\"", "").replace("\\/", "/");
     }
-
-    public void takeAndSavePartScreenShotToBinary() {
-    }
-
 }

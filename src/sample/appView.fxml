@@ -42,7 +42,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="copySSUrl" layoutX="215.0" layoutY="253.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="171.0" text="Copy URL to Clipboard">
+            <Button fx:id="copySSUrl" layoutX="215.0" layoutY="253.0" mnemonicParsing="false" onAction="#copyUrlToClipboard" prefHeight="30.0" prefWidth="171.0" text="Copy URL to Clipboard">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
